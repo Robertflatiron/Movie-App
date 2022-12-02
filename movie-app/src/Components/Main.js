@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 
@@ -61,7 +62,7 @@ const Main=()=> {
                         {
                             arr.map((value)=>{
                                 return(
-                                    <li><a href="#" name={value} onClick={(e)=>{getData(e.target.name)}}>{value}</a></li>
+                                    <li><a name={value} onClick={(e)=>{getData(e.target.name)}}>{value}</a></li>
                                 )
                             })
                         }
@@ -81,7 +82,7 @@ const Main=()=> {
             </div>
             <div className="container">
                 {
-                    (movieData.length==0)?<p className="notfound">Not Found</p>: movieData.map((res,pos)=>{
+                    (movieData.length===0)?<p className="notfound">Not Found</p>: movieData.map((res,pos)=>{
                         return(
                             <Card info={res} key={pos} />
                         )
